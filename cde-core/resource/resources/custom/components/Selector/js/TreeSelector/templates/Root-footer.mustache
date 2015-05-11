@@ -1,0 +1,13 @@
+<div class="selector-root-footer">
+
+  {{#isBusy}}
+    <div class="selector-busy" />
+  {{/isBusy}}
+  {{#reachedSelectionLimit}}
+    <div class="selector-root-notification">
+      The selection limit (
+      <span class="selector-notification-highlight">{{selectionStrategy.limit}}</span>
+      ) for specific items has been reached.
+    </div>
+  {{/reachedSelectionLimit}}
+    </div>

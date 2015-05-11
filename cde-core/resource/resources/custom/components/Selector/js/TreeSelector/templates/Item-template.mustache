@@ -1,0 +1,47 @@
+<div class="selector-item-container
+            {{#isPartiallySelected}} some-selected{{/isPartiallySelected}}
+            {{^isPartiallySelected}}
+            {{#isSelected}} all-selected{{/isSelected}}
+            {{^isSelected}} none-selected{{/isSelected}}
+            {{/isPartiallySelected}}
+            ">
+
+  {{#header}}
+  <div class="selector-item-header"> {{{header}}} </div>
+  {{/header}}
+
+  <div class="selector-item-body">
+    <!-- <label class="selector-item-label"> -->
+    <!-- <input type="checkbox" {{#isSelected}}checked="true"{{/isSelected}} /> -->
+    <!-- {{{label}}} -->
+    <!-- </label> -->
+    {{{item}}}
+
+    <div class="selector-item-selection-icon">
+      <div />
+    </div>
+
+    {{#showButtonOnlyThis}}
+    <span class="selector-item-only-this">
+      {{{strings.btnOnlyThis}}}
+    </span>
+    {{/showButtonOnlyThis}}
+
+    <div class="selector-item-label"
+         title="{{{label}}}"
+         >
+      {{{label}}}
+    </div>
+
+    {{#showValue}}
+    <div class="selector-item-value">
+      {{{value}}}
+    </div>
+    {{/showValue}}
+  </div>
+
+  {{#footer}}
+  <div class="selector-item-footer"> {{{footer}}} </div>
+  {{/footer}}
+
+</div>

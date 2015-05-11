@@ -1,0 +1,43 @@
+<div class="selector-title">{{{strings.title}}}</div>
+<div class="selector-root-container
+            {{#className}} {{className}}{{/className}}
+            {{#styles}} {{.}} {{/styles}}
+            {{#isDisabled}} disabled{{/isDisabled}}
+            ">
+  {{#useOverlay}}
+<div class="selector-overlay
+            {{^alwaysExpanded}}
+            {{#isCollapsed}} collapsed{{/isCollapsed}}
+            {{^isCollapsed}} expanded {{/isCollapsed}}
+            {{/alwaysExpanded}}
+            {{#alwaysExpanded}} always-expanded{{/alwaysExpanded}}
+            " />
+{{/useOverlay}}
+  <div class="selector-root-header
+              {{#isPartiallySelected}} some-selected{{/isPartiallySelected}}
+              {{^isPartiallySelected}}
+              {{#isSelected}} all-selected{{/isSelected}}
+              {{^isSelected}} none-selected{{/isSelected}}
+              {{/isPartiallySelected}}
+
+              {{^alwaysExpanded}}
+              {{#isCollapsed}} collapsed{{/isCollapsed}}
+              {{^isCollapsed}} expanded {{/isCollapsed}}
+              {{/alwaysExpanded}}
+              {{#alwaysExpanded}} always-expanded{{/alwaysExpanded}}
+              ">
+    <div class="selector-root-header-label">
+      {{{header}}}
+    </div>
+    <div class="selector-root-collapse-icon" />
+  </div>
+
+  <div class="selector-root-body" >
+    <div class="selector-root-control" />
+    <div class="selector-root-items-container">
+      <div class="selector-root-items" />
+    </div>
+    <div class="selector-root-footer"> {{{footer}}} </div>
+  </div>
+
+</div>
