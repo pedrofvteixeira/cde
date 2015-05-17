@@ -50,35 +50,24 @@ module.exports = function(config) {
       'resource/js/cdf-dd-prompt-properties.js',
       'resource/js/cdf-dd-prompt-wizard.js',
       'resource/js/cdf-dd-datasources.js',
+      'test-js/legacy/main.js',
 
-
-      // to run tree selector
-
+      /* to run tree selector */
       'bin/test-js/cdf/js-legacy/lib/backbone/backbone.js',
       'bin/test-js/cdf/js-legacy/lib/mustache/mustache.js',
-
-      'bin/test-js/cdf/js-legacy/wd.js', // addIns.js
-      'bin/test-js/cdf/js-legacy/components/core.js',  // selector.js (BaseComponent & UnmanagedComponent)
-      'bin/test-js/cdf/js-legacy/Dashboards.js', // addIns.js
-      'bin/test-js/cdf/js-legacy/Dashboards.Startup.js', // addIns.js
-      'bin/test-js/cdf/js-legacy/Dashboards.Legacy.js', // addIns.js
-      
-      'bin/test-js/cdf/js-legacy/cdf-base.js', // addIns.js
-
-      'bin/test-js/cdf/js-legacy/Dashboards.Main.js', // addIns.js
-
-      'bin/test-js/cdf/js-legacy/Dashboards.Query.js', // addIns.js
-      'bin/test-js/cdf/js-legacy/Dashboards.AddIns.js', // addIns.js
-      'bin/test-js/cdf/js-legacy/AddIns.js', // addIns.js
-
-      'resource/resources/custom/components/Selector/lib/basebone.js',
+      'bin/test-js/cdf/js-legacy/lib/shims.js',
+      'bin/test-js/cdf/js-legacy/wd.js',
+      'bin/test-js/cdf/js-legacy/components/core.js',
+      'bin/test-js/cdf/js-legacy/Dashboards.js',
+      'bin/test-js/cdf/js-legacy/Dashboards.Startup.js',
+      'bin/test-js/cdf/js-legacy/Dashboards.Legacy.js',
+      'bin/test-js/cdf/js-legacy/cdf-base.js',
+      'bin/test-js/cdf/js-legacy/Dashboards.Main.js',
+      'bin/test-js/cdf/js-legacy/Dashboards.Query.js',
+      'bin/test-js/cdf/js-legacy/Dashboards.AddIns.js',
+      'bin/test-js/cdf/js-legacy/AddIns.js',
       'resource/resources/custom/components/Selector/lib/backbone.treemodel.js',
-      //'resource/resources/custom/components/Selector/lib/jquery.optiscroll.js',
-
       'resource/resources/custom/components/Selector/lib/basebone.js',
-      'resource/resources/custom/components/Selector/lib/backbone.treemodel.js',
-      //'resource/resources/custom/components/Selector/lib/jquery.optiscroll.js',
-      //'resource/resources/custom/components/Selector/lib/jquery.mCustomScrollbar.concat.min.js',
       'resource/resources/custom/components/Selector/js/TreeSelector/TreeSelector.js',
       'resource/resources/custom/components/Selector/js/TreeSelector/defaults.js',
       'resource/resources/custom/components/Selector/js/TreeSelector/Logger.js',
@@ -100,12 +89,8 @@ module.exports = function(config) {
       'resource/resources/custom/components/Selector/js/TreeSelector/data-handlers/OutputDataHandler.js', 
       'resource/resources/custom/components/Selector/js/TreeSelector/addIns/addIns.js',
       'resource/resources/custom/components/Selector/js/selector.js',
+      /* end tree selector */
 
-      // end tree selector
-
-
-
-      'test-js/legacy/main.js',
       {pattern: 'test-js/legacy/**/*-spec.js', included: false}
     ],
 
