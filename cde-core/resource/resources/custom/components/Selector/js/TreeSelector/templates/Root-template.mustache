@@ -1,0 +1,85 @@
+<div class="selector-root-control
+            {{#isPartiallySelected}} some-selected{{/isPartiallySelected}}
+            {{^isPartiallySelected}}
+            {{#isSelected}} all-selected{{/isSelected}}
+            {{^isSelected}} none-selected{{/isSelected}}
+            {{/isPartiallySelected}}
+
+            {{^alwaysExpanded}}
+            {{#isCollapsed}} collapsed{{/isCollapsed}}
+            {{^isCollapsed}} expanded {{/isCollapsed}}
+            {{/alwaysExpanded}}
+            {{#alwaysExpanded}} always-expanded{{/alwaysExpanded}}
+            ">
+  <div class="selector-controls">
+
+    {{#showCommitButtons}}
+      <div class="selector-control-buttons">
+        <div class="selector-control-button">
+          <button class="selector-btn-cancel
+                         {{#hasChanged}} dirty{{/hasChanged}}
+                         {{^hasChanged}} pristine{{/hasChanged}}
+                         "
+                  >
+            {{{strings.btnCancel}}}
+          </button>
+        </div>
+        <div class="selector-control-button">
+          <button class="selector-btn-apply
+                         {{#hasChanged}} dirty{{/hasChanged}}
+                         {{^hasChanged}} pristine{{/hasChanged}}
+                         "
+                  {{^hasChanged}} disabled="disabled"{{/hasChanged}}
+                  >
+            {{{strings.btnApply}}}
+          </button>
+        </div>
+      </div>
+    {{/showCommitButtons}}
+
+    {{#showFilter}}
+      <div class="selector-filter">
+        <input type="text" class="selector-filter-input" />
+        <div class="selector-filter-icon" />
+        <div class="selector-filter-clear" />
+      </div>
+    {{/showFilter}}
+
+  </div>
+
+
+
+  <div class="selector-root-selection">
+
+    {{#showGroupSelection}}
+      <div class="selector-root-selection-icon
+                  {{#isPartiallySelected}} some-selected{{/isPartiallySelected}}
+                  {{^isPartiallySelected}}
+                  {{#isSelected}} all-selected{{/isSelected}}
+                  {{^isSelected}} none-selected{{/isSelected}}
+                  {{/isPartiallySelected}}
+                  " />
+      <div class="selector-root-selection-label">
+        {{{label}}}
+      </div>
+
+      {{#showValue}}
+          <div class="selector-root-selection-value">
+            {{{value}}}
+          </div>
+      {{/showValue}}
+
+    {{/showGroupSelection}}
+
+    {{#showSelectedItems0}}
+      <div class="selector-selected-items">
+        {{#selectedItems}}
+          <span class="selector-selected-item">{{.}}</span>
+        {{/selectedItems}}
+      </div>
+    {{/showSelectedItems0}}
+
+  </div>
+
+
+</div>

@@ -1,0 +1,568 @@
+$theme-background = #FFFFFF
+$theme-border-normal = #C6C6C6
+$theme-border-hover = #005CA7
+$theme-border-selected = #005CA7
+
+$theme-background-controls = #F2F2F2
+$theme-icon-size = 14px
+$theme-item-hover = #E6E6E6
+$theme-item-selected = #F4F4F4
+
+$theme-item-icon-normal = #C6C6C6
+$theme-item-icon-hover = #005CA7
+$theme-item-icon-selected = #005CA7
+
+$theme-title-color = #4D4D4D
+$theme-title-font-size = 10px
+$theme-text-color = #616161
+
+$theme-header-font-size = 14px
+$theme-content-font-size = 13px
+
+$theme-button-text = #FFFFFF
+$theme-button-background-normal = #616161
+$theme-button-border-normal = #616161
+$theme-button-background-hover = #7E7E7E
+$theme-button-border-hover = #7E7E7E
+$theme-button-text-disabled = #CECECE
+$theme-button-background-disabled = #EFEFEF
+$theme-button-border-disabled = #E7E7E7
+
+user-select(x)
+  -webkit-touch-callout x
+  -webkit-user-select x
+  -khtml-user-select x
+  -moz-user-select x
+  -ms-user-select x
+  user-select x
+
+box-sizing(x)
+  -webkit-box-sizing x
+  -moz-box-sizing x
+  box-sizing x
+
+border-radius(x)
+  -webkit-border-radius x
+  -moz-border-radius x
+  border-radius x
+
+/*
+ * Layout, positioning
+ */
+ 
+.selector-root-container
+  position relative
+
+.selector-root-container
+  z-index 10
+  &.expanded
+    z-index 1000
+
+.selector-overlay
+  // background orange
+  // opacity 0.3
+.selector-overlay.expanded
+  position fixed
+  top 0
+  left 0
+  height 100%
+  width 100%
+  background #FFFFFF
+  opacity 0.2
+  
+.selector-overlay.collapsed
+  display none
+  
+.selector-title
+  font-size $theme-title-font-size
+  color $theme-text-color
+  margin-bottom 5px
+  
+.selector-root-header
+  position relative
+  cursor pointer
+  user-select none
+  font-size $theme-header-font-size
+  
+.selector-root-container.disabled .selector-root-header
+  cursor default
+  
+.selector-root-header-label
+  padding 5px 0 5px 10px
+  line-height 22px
+  margin-right 30px
+  .selector-root-info-selected-items 
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
+    display block
+
+  
+
+  
+.selector-collapse-icon
+  position absolute
+  bottom 0
+  top 0
+  margin auto 0
+  right 10px
+  background  url("../images/selector-arrow.svg") no-repeat left center
+  width 10px
+  height 10px
+  
+.no-svg .selector-collapse-icon
+  background  url("../images/selector-arrow.png") no-repeat left center
+  
+.selector-collapse-icon.collapsed
+  background-position left center
+  
+.selector-root-header:hover  > .selector-collapse-icon.collapsed
+//.selector-group-header:hover > .selector-collapse-icon.collapsed
+.selector-collapse-icon.collapsed:hover
+  background-position -10px center
+  
+.selector-collapse-icon.expanded
+  background-position -20px center
+  
+.selector-root-header:hover  > .selector-collapse-icon.expanded
+//.selector-group-header:hover > .selector-collapse-icon.expanded
+.selector-collapse-icon.expanded:hover
+  background-position -30px center
+  
+.selector-collapse-icon.always-expanded
+.selector-collapse-icon.disabled
+  display none
+  
+
+  
+.selector-root-body
+  // margin-top 1px
+  position absolute
+  box-sizing border-box
+  // background #ffffff
+  width 100%
+  padding-bottom 0
+  font-size $theme-content-font-size
+  // -webkit-box-shadow 2px 2px 2px 0 rgba(0,0,0,0.3) 
+  // box-shadow 2px 2px 2px 0 rgba(0,0,0,0.3)
+  
+.selector-root-container.always-expanded > .selector-root-body
+  position relative
+.selector-root-container.disabled > .selector-root-body
+  display none
+.selector-root-container.collapsed > .selector-root-body
+  max-height 0
+  overflow hidden
+  border-bottom none
+  
+.selector-root-container.expanded > .selector-root-body
+  max-height 600px
+  overflow hidden
+  
+.selector-root-control
+  width 100%
+.selector-controls
+  position relative
+  padding 15px
+  
+  .selector-control-buttons
+    padding-bottom 15px
+    position relative
+  .selector-control-button
+    width 50%
+    position relative
+    display inline-block
+    &:first-child
+      width 40%
+      padding 0 7px 0 0
+    &:last-child
+      width 60%
+      padding 0 0 0 7px
+  .selector-control-button > .pristine
+    cursor default 
+  .selector-control-button > .dirty
+    cursor pointer
+  .selector-btn-cancel,
+  .selector-btn-apply
+    padding 4px 0
+    outline none
+    width 100%
+    font-size 10px
+  .selector-btn-cancel
+  .selector-btn-apply.dirty
+    background $theme-button-background-normal
+    border 1px solid $theme-button-border-normal
+    color $theme-button-text
+    &:hover
+      background $theme-button-background-hover
+      border 1px solid $theme-button-border-hover
+      cursor pointer
+  .selector-btn-apply.pristine
+    background $theme-button-background-disabled
+    border 1px solid $theme-button-border-disabled
+    color $theme-button-text-disabled
+    cursor default
+
+    
+  .selector-filter
+    position relative
+    //margin 10px
+    .selector-filter-input
+      box-sizing border-box
+      padding: 0 30px;
+      width: 100%;
+      line-height: 22px;
+    .selector-filter-icon
+    .selector-filter-clear
+      position absolute
+      top 0
+      bottom 0
+      margin: auto 0
+    .selector-filter-icon
+      width 12px
+      height 12px
+      pointer-events none
+      left 10px
+      background  url("../images/search-icon.svg") no-repeat center center
+    .no-svg .selector-filter-icon
+      background  url("../images/search-icon.png") no-repeat center center
+    .selector-filter-clear
+      width 10px
+      height 10px
+      cursor pointer
+      right 10px
+      background  url("../images/close-icon.svg")
+      background-repeat no-repeat
+      background-position left center
+      &:hover
+        background-position right center
+    .no-svg .selector-filter-clear
+      background  url("../images/close-icon.png")
+
+.selector-root-selection
+  position relative
+.multi-select .selector-root-selection
+  padding 7px 10px
+  margin-right 20px
+  user-select none
+  margin-top 10px
+  
+.selector-selected-items
+  padding 10px
+.selector-selected-item
+  padding 5px 10px
+  background $theme-item-selected
+  border 1px solid $theme-border-selected
+  margin 5px
+  border-radius 10px
+  
+    
+.selector-group-container
+  //padding-left 20px
+  .selector-group-header,
+  .selector-group-footer
+    position relative
+    // margin 10px
+  .selector-group-title
+    font-size 16px
+    padding 10px 5px
+  .selector-btn-more-data
+    padding 10px
+    width 100%
+  .selector-group-selection
+    padding 5px 10px
+    
+.selector-item-container
+  padding 0
+.selector-item-body
+  position relative
+  padding 7px 10px  
+  user-select none
+  cursor pointer
+.single-select .selector-item-container.all-selected .selector-item-body 
+  cursor default
+.selector-root-selection-label
+.selector-group-label
+.selector-item-label
+  margin 0 ($theme-icon-size + 15px)
+  line-height 18px
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+.selector-root-selection-label
+.selector-group-label
+  font-weight 600
+.selector-item-only-this
+.selector-item-value
+  position absolute
+  top 0
+  bottom 0
+  margin auto 0
+  height 22px
+  line-height 22px
+  font-size 10px
+.selector-item-value
+  right 30px
+  
+.selector-root-selection-value
+.selector-group-selection-value
+  position absolute
+  right 40px
+  bottom 0
+  line-height 18px
+  font-weight 600
+.selector-item-only-this
+  color gray
+  right 15px
+  visibility hidden
+.selector-item-container:hover .selector-item-only-this
+  color $theme-border-hover
+  visibility visible
+.selector-item-only-this:hover
+  text-decoration underline
+  cursor pointer
+
+/****************************
+* Item shading
+*/
+.selector-item-container:hover,
+.selector-item-container.all-selected:hover
+  background $theme-item-hover
+
+.selector-root-control .selector-root-selection:hover
+.selector-group-header .selector-group-selection:hover
+.selector-item-container:hover 
+  background $theme-item-hover
+  cursor pointer
+
+.selector-root-control.some-selected .selector-root-selection
+.selector-group-header.some-selected .selector-group-selection
+.selector-item-container.some-selected
+.selector-root-control.all-selected .selector-root-selection
+.selector-group-header.all-selected .selector-group-selection
+.selector-item-container.all-selected
+  background $theme-item-selected
+  color $theme-border-hover
+  &:hover
+    background $theme-item-hover
+
+    
+/*
+ * Checkboxes
+ */
+.selector-root-selection-icon
+.selector-group-selection-icon
+.selector-item-selection-icon
+  float left
+  width $theme-icon-size
+  height $theme-icon-size
+  cursor pointer
+  border 1px solid $theme-border-normal
+  position absolute
+  left 15px
+  top 0
+  bottom 0
+  margin auto 0
+
+.selector-root-container:hover .selector-root-selection-icon
+.selector-group-container:hover .selector-group-selection-icon
+.selector-item-container:hover .selector-item-selection-icon
+  border-color $theme-border-hover
+    
+.selector-root-selection-icon.all-selected    
+.selector-group-selection-icon.all-selected
+.selector-item-container.all-selected .selector-item-selection-icon
+  border-color $theme-border-selected 
+
+  
+.selector-root-container.multi-select    
+  .selector-root-selection-icon
+  .selector-group-selection-icon
+  .selector-item-selection-icon
+    border-radius 0
+    background-color #FFFFFF 
+    background-image url("../images/checkbox-sprite.svg") 
+    background-repeat no-repeat 
+    background-position left center
+  
+  .selector-root-selection-icon.all-selected
+  .selector-group-selection-icon.all-selected
+  .selector-item-container.all-selected .selector-item-selection-icon
+    background-color $theme-border-hover
+    background-position center center
+
+  .selector-root-selection-icon.some-selected
+  .selector-group-selection-icon.some-selected
+  .selector-item-container.some-selected .selector-item-selection-icon
+    background-position right center
+  
+.no-svg .selector-root-container.multi-select    
+  .selector-root-selection-icon
+  .selector-group-selection-icon
+  .selector-item-selection-icon
+    background-image url("../images/checkbox-sprite.png") 
+
+    
+.selector-root-container.single-select
+  .selector-root-selection-icon
+  .selector-group-selection-icon
+  .selector-item-container .selector-item-selection-icon
+    border-radius 100%
+    border 1px solid $theme-border-normal
+
+    
+.selector-root-container.single-select
+  .selector-item-container:hover .selector-item-selection-icon
+    border 1px solid $theme-border-hover
+  .selector-item-container.all-selected .selector-item-selection-icon
+    border 1px solid $theme-border-normal !important
+
+
+    
+  .selector-root-selection-icon.none-selected
+  .selector-group-selection-icon.none-selected
+  .selector-item-container.none-selected .selector-item-selection-icon
+    background #ffffff
+    
+  .selector-root-selection-icon.all-selected
+  .selector-group-selection-icon.all-selected
+  .selector-item-container.all-selected .selector-item-selection-icon
+    //background $theme-border-selected
+    
+  .selector-root-selection-icon.all-selected > div
+  .selector-group-selection-icon.all-selected > div
+  .selector-item-container.all-selected .selector-item-selection-icon > div
+    width 6px
+    height 6px
+    position absolute
+    top 0
+    bottom 0
+    left 0
+    right 0
+    margin auto
+    border-radius 100%
+    background $theme-border-selected
+  
+  .selector-root-selection-icon.some-selected
+  .selector-group-selection-icon.some-selected
+  .selector-item-container.some-selected .selector-item-selection-icon
+    background url("../images/24px/collapse.png") no-repeat 50% 50%
+    background-position -24px 50%
+    background $theme-border-selected
+/***************************
+ * Colors
+ */
+.selector-root-container
+  background $theme-background
+  
+.selector-root-header
+  border 1px solid $theme-border-normal
+  &:hover
+    border-color $theme-border-hover
+    
+.always-expanded .selector-root-header
+.always-expanded .selector-root-header:hover
+.disabled .selector-root-header
+.disabled .selector-root-header:hover
+  border-color $theme-border-normal
+  cursor default
+
+.selector-root-body
+  background $theme-background
+  border 1px solid $theme-border-normal
+  border-top none
+  
+.selector-controls
+  background $theme-background-controls
+  .selector-filter
+    .selector-filter-input
+      outline none
+      border 1px solid $theme-border-normal
+    .selector-filter-input:hover
+    .selector-filter-input:focus
+      border-color $theme-border-hover
+
+.selector-group-container .selector-controls
+  display none
+
+    
+.selector-root-notification
+  padding 20px
+  border-top 1px solid gray
+
+.selector-root-info-number-selected-items
+  color #333333
+.selector-root-info-number-items
+  color #aaaaaa
+.selector-item-container
+  font-size $theme-content-font-size
+
+  
+// .selector-group-collapse
+//   width 20px
+//   height 20px
+//   background blue
+//   float right
+
+/************************
+ *  Scrollbar 
+ *****/
+
+.selector-root-items-container.mCustomScrollbar
+  height 200px
+  padding 10px 0
+  .mCSB_inside > .mCSB_container 
+    margin-right 20px
+  .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar 
+    width 6px
+  
+    
+/************************  
+ *  Notifications
+ */
+ 
+.selector-root-footer > .selector-busy
+  //margin-top -100px
+  height 100px
+  width 100%
+  background  url("../images/waiting.gif") no-repeat 50% 50%
+  background-position -140px -100px
+  // position absolute
+  // bottom 0
+  // z-index 1001
+
+  
+.selector-root-notification
+  background lightyellow
+  padding 20px
+  border-top 1px solid gray
+
+/**
+ * Preserve selector length, at the cost of hiding items
+ */
+// .selector-root-notification 
+//   position absolute
+//   bottom 0
+//   z-index 1001
+  
+.selector-notification-highlight
+  color: red
+
+
+/************************
+ * Custom
+ */
+ 
+// .selector
+//   width 300px
+
+
+// Hide group collapse icons
+// .selector-group-container .selector-collapse-icon
+//   display none
+
+// Hide values 
+.selector-root-selection-value
+.selector-group-selection-value
+.selector-item-value
+  //display none
