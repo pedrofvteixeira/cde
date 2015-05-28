@@ -17,7 +17,17 @@
 
 (function() {
 
-  var requirePaths = requireCfg.paths;
+  var requirePaths = requireCfg.paths,
+      requireShims = requireCfg.shim,
+      requireConfig = requireCfg.config;
+
+  if(!requireConfig['amd']) {
+    requireConfig['amd'] = {};
+  }
+  if(!requireConfig['amd']['shim']) {
+    requireConfig['amd']['shim'] = {};
+  }
+  var amdShim = requireConfig['amd']['shim'];
 
   var isDebug = typeof document == "undefined" || document.location.href.indexOf("debug=true") > 0;
 
@@ -87,4 +97,20 @@
   requirePaths['cde/components/DashboardComponent'] = prefix + '/DashboardComponent/DashboardComponent';
   requirePaths['cde/components/DashboardComponentExt'] = prefix + '/DashboardComponent/DashboardComponent.ext';
 
+  requirePaths['cde/components/TreeSelectorComponent'] = prefix + '/Selector/TreeSelectorComponent';
+  requirePaths['cde/components/Selector/lib/backbone.treemodel'] = prefix + '/Selector/lib/backbone.treemodel';
+  
+  // backbone.treeModel (2013)
+  amdShim["cde/components/Selector/lib/backbone.treemodel"] = {
+     exports: "Backbone",
+     deps: {
+       "amd!cdf/lib/underscore" : "_",
+       "amd!cdf/lib/backbone" : "Backbone"
+     },
+     prescript: "debugger; var root = { Backbone: Backbone, _: _ };\n"+
+     "(function() {\n",
+     postscript: "}.call(root));\n"
+     + "return root.Backbone;"
+  };
+  
 })();
