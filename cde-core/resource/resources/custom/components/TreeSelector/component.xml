@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <DesignerComponent>
   <Header>
-    <Name>Selector</Name>
+    <Name>TreeSelector</Name>
     <IName>TreeSelectorComponent</IName>
-    <Description>Selector</Description>
+    <Description>TreeSelector</Description>
     <Category>SELECTORS</Category>
     <CatDescription>Selects</CatDescription>
     <Type>PalleteEntry</Type>
