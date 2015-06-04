@@ -2,14 +2,14 @@ define([
   'cdf/lib/jquery',
   'amd!cdf/lib/underscore',
   'cdf/Dashboard.Clean',
-  'cde/components/TreeSelectorComponent'],
+  'cde/components/TreeSelector/TreeSelector-implementation'],
   function( $ , _ , Dashboard, TreeSelector ) {
 
 
     describe('TreeSelector.Models.SelectionTree', function() {
 
-        var dashboard = new Dashboard();
-        dashboard.init();
+        //var dashboard = new Dashboard();
+        //dashboard.init();
 
         var model;
         model = void 0;
