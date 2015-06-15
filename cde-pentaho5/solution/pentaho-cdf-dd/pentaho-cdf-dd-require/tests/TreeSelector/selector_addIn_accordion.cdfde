@@ -60,14 +60,14 @@
       "type": "Id"
      },
      {
-      "name": "resourceType",
-      "value": "Css",
-      "type": "Label"
-     },
-     {
       "name": "resourceCode",
       "value": ".selector-accordion .selector-root-body{\n    position: relative;\n}\n\n.selector-accordion .selector-root-header:hover{\n   border: 1px solid #000;   \n}\n\n.selector-accordion{\n    border: 1px solid black;\n    border-radius: 4px;\n    background: #fee;\n    padding: 30px;\n}\ndt {\n    padding-left: 10px;\n    font-family: monospace;\n}\ndd {\n    padding-left: 30px;\n} ",
       "type": "Resource"
+     },
+     {
+      "name": "resourceType",
+      "value": "Css",
+      "type": "Label"
      }
     ]
    },
@@ -1128,8 +1128,8 @@
    },
    {
     "id": "2823eec2-ae66-1583-4045-819163fc01ed",
-    "type": "ComponentsSelectorComponent",
-    "typeDesc": "Selector",
+    "type": "ComponentsTreeSelectorComponent",
+    "typeDesc": "TreeSelector",
     "parent": "SELECTORS",
     "properties": [
      {
@@ -1306,8 +1306,8 @@
    },
    {
     "id": "5296b17e-cedc-3b5c-e271-42e2c7683116",
-    "type": "ComponentsSelectorComponent",
-    "typeDesc": "Selector",
+    "type": "ComponentsTreeSelectorComponent",
+    "typeDesc": "TreeSelector",
     "parent": "SELECTORS",
     "properties": [
      {
@@ -1484,8 +1484,8 @@
    },
    {
     "id": "81893cb3-2a8d-e749-6312-bd5de73797ba",
-    "type": "ComponentsSelectorComponent",
-    "typeDesc": "Selector",
+    "type": "ComponentsTreeSelectorComponent",
+    "typeDesc": "TreeSelector",
     "parent": "SELECTORS",
     "properties": [
      {
@@ -1662,8 +1662,8 @@
    },
    {
     "id": "1c88a70b-d093-ff1e-0c45-69d60154a736",
-    "type": "ComponentsSelectorComponent",
-    "typeDesc": "Selector",
+    "type": "ComponentsTreeSelectorComponent",
+    "typeDesc": "TreeSelector",
     "parent": "SELECTORS",
     "properties": [
      {
@@ -1991,372 +1991,6 @@
       "type": "Boolean"
      }
     ]
-   },
-   {
-    "id": "OTHERCOMPONENTS",
-    "name": "Others",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "Others",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "994a3e9b-72c6-864d-e2a9-bf90ee3bb40d",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "button3",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Button0",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "successCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "expression",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "actionParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "failureCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "Datasource",
-      "value": "",
-      "type": "Datasource"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "themeroller",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:button3}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "532fa65f-8db4-491d-7f72-03194dcec35e",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "button2",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Button2",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "successCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "expression",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "actionParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "failureCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "Datasource",
-      "value": "",
-      "type": "Datasource"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "themeroller",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:button2}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "10175873-77d7-60b7-b99a-f6c7a6917c32",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "button1",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Button1",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "successCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "expression",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "actionParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "failureCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "Datasource",
-      "value": "",
-      "type": "Datasource"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "themeroller",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:button1}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "86972a35-c5cd-17b2-10e7-73c72e28e50a",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "button0",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Button0",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "successCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "expression",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "actionParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "failureCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "Datasource",
-      "value": "",
-      "type": "Datasource"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "themeroller",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:button0}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
    }
   ]
  },
@@ -2388,13 +2022,13 @@
       "type": "Id"
      },
      {
-      "name": "language",
-      "value": "beanshell",
+      "name": "initscript",
+      "value": "",
       "type": "String"
      },
      {
-      "name": "initscript",
-      "value": "",
+      "name": "language",
+      "value": "beanshell",
       "type": "String"
      },
      {
@@ -2413,9 +2047,9 @@
       "type": "CdaParameters"
      },
      {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
      },
      {
       "name": "cdacolumns",
@@ -2423,14 +2057,14 @@
       "type": "CdaColumnsArray"
      },
      {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
       "name": "output",
       "value": "[\"0\",\"1\"]",
       "type": "IndexArray"
+     },
+     {
+      "name": "outputMode",
+      "value": "include",
+      "type": "OutputMode"
      },
      {
       "name": "cacheKeys",
@@ -2464,13 +2098,13 @@
       "type": "Id"
      },
      {
-      "name": "language",
-      "value": "beanshell",
+      "name": "initscript",
+      "value": "",
       "type": "String"
      },
      {
-      "name": "initscript",
-      "value": "",
+      "name": "language",
+      "value": "beanshell",
       "type": "String"
      },
      {
@@ -2489,9 +2123,9 @@
       "type": "CdaParameters"
      },
      {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
      },
      {
       "name": "cdacolumns",
@@ -2499,14 +2133,14 @@
       "type": "CdaColumnsArray"
      },
      {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
       "name": "output",
       "value": "[]",
       "type": "IndexArray"
+     },
+     {
+      "name": "outputMode",
+      "value": "include",
+      "type": "OutputMode"
      },
      {
       "name": "cacheKeys",

@@ -252,10 +252,10 @@ define([
             implementation: function($tgt, st, options) {
               st.model.on('change:isCollapsed', function(model, newState) {
                 if (newState === false) {
-                  return Dashboards.trigger('selectors:close', model, options);
+                  return dashboard.trigger('selectors:close', model, options);
                 }
               });
-              st.model.listenTo(Dashboards, 'selectors:close', function(model, opts) {
+              st.model.listenTo(dashboard, 'selectors:close', function(model, opts) {
                 if (opts.group === options.group) {
                   if (model !== st.model) {
                     if (st.model.get('isDisabled') === false) {
