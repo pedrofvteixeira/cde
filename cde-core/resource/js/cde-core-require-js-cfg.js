@@ -97,11 +97,11 @@
   requirePaths['cde/components/DashboardComponent'] = prefix + '/DashboardComponent/DashboardComponent';
   requirePaths['cde/components/DashboardComponentExt'] = prefix + '/DashboardComponent/DashboardComponent.ext';
 
-  requirePaths['cde/components/TreeSelectorComponent'] = prefix + '/TreeSelector/TreeSelectorComponent';
-  requirePaths['cde/components/TreeSelector/lib/backbone.treemodel'] = prefix + '/TreeSelector/lib/backbone.treemodel';
+  requirePaths['cde/components/FilterComponent'] = prefix + '/Filter/FilterComponent';
+  requirePaths['cde/components/Filter/lib/backbone.treemodel'] = prefix + '/Filter/lib/backbone.treemodel';
   
   // backbone.treeModel external lib
-  amdShim["cde/components/TreeSelector/lib/backbone.treemodel"] = {
+  amdShim["cde/components/Filter/lib/backbone.treemodel"] = {
      exports: "Backbone",
      deps: {
        "amd!cdf/lib/underscore" : "_",
@@ -114,7 +114,7 @@
   };
 
   // jQuery.mCustomScrollbar.concat.min.js external lib
-  amdShim["cde/components/TreeSelector/lib/jquery.mCustomScrollbar.concat.min"] = {
+  amdShim["cde/components/Filter/lib/jquery.mCustomScrollbar.concat.min"] = {
      exports: "jQuery",
      deps: {
        "cdf/lib/jquery": "jQuery"
