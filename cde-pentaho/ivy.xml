@@ -17,10 +17,14 @@
           rev="${project.revision}" transitive="false" changing="true" conf='runtime,test->default'/>
       <!-- cpf transitive to pull standard pentaho packages -->
       <dependency org="pentaho" name="cpf-pentaho"
-          rev="${dependency.pentaho-cpf-plugin.revision}" transitive="true" changing="true" conf='default->default'/>
+          rev="${dependency.pentaho-cpf-plugin.revision}" transitive="true" changing="true" conf='default->default'>
+          <exclude org="org.springframework"/>
+      </dependency>
         <!-- cpf non-transitive to post copy to lib -->
       <dependency org="pentaho" name="cpf-core"
-          rev="${dependency.pentaho-cpf-plugin.revision}" transitive="false" changing="true" conf='runtime->default'/>
+          rev="${dependency.pentaho-cpf-plugin.revision}" transitive="false" changing="true" conf='runtime->default'>
+          <exclude org="org.springframework"/>
+      </dependency>
       <dependency org="pentaho" name="cpf-pentaho"
           rev="${dependency.pentaho-cpf-plugin.revision}" transitive="false" changing="true" conf='runtime->default'/>
 
@@ -44,7 +48,7 @@
       <dependency org="dom4j"              name="dom4j"              rev="1.6.1"                       transitive="false"/>
       <dependency org="javax.servlet"      name="servlet-api"        rev="2.4"                         transitive="false"/>
       <dependency org="org.json"           name="json"               rev="${dependency.json.revision}" transitive="false"/>
-      
+
       <!-- TODO: either pass to cpf or use another log lib -->
       <dependency org="org.slf4j" name="slf4j-api" rev="1.7.5" />
       <!-- TODO: replace by either jackson or org.json -->
@@ -61,6 +65,8 @@
         <artifact name="cde-core-test"      type="jar" ext="jar" conf="test"/>
         <artifact name="cde-core"           type="jar" ext="jar"/>
       </dependency> 
+
+      <dependency org="org.springframework.security" name="spring-security-core" rev="2.0.5.RELEASE" conf="test->default" transitive="false" force="true" />
 
     </dependencies>
     

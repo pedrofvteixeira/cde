@@ -35,9 +35,7 @@ import org.apache.commons.logging.LogFactory;
 import org.json.JSONException;
 import org.pentaho.platform.api.engine.IPluginManager;
 import org.pentaho.platform.api.engine.IPluginResourceLoader;
-import org.pentaho.platform.engine.core.system.PentahoSessionHolder;
 import org.pentaho.platform.engine.core.system.PentahoSystem;
-import org.pentaho.platform.engine.security.SecurityHelper;
 import org.pentaho.platform.web.http.api.resources.PluginResource;
 import pt.webdetails.cdf.dd.util.CdeEnvironment;
 import pt.webdetails.cdf.dd.util.GenericBasicFileFilter;
@@ -51,6 +49,7 @@ import pt.webdetails.cpf.repository.api.FileAccess;
 import pt.webdetails.cpf.repository.api.IBasicFile;
 import pt.webdetails.cpf.repository.api.IReadAccess;
 import pt.webdetails.cpf.repository.util.RepositoryHelper;
+import pt.webdetails.cpf.session.PentahoSession;
 import pt.webdetails.cpf.utils.PluginIOUtils;
 
 @Path( "pentaho-cdf-dd/api/resources" )
@@ -276,7 +275,7 @@ public class ResourcesApi {
    * @return true if the current user is administrator, false otherwise
    */
   protected boolean isAdministrator() {
-    return SecurityHelper.getInstance().isPentahoAdministrator( PentahoSessionHolder.getSession() );
+    return new PentahoSession().isAdministrator();
   }
 
 }
